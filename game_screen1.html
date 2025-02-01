@@ -73,13 +73,13 @@
             sessionStorage.setItem("nickname", nickname);
             console.log("저장된 닉네임:", nickname);
             alert(`'${nickname}'. 확인되었습니다.`);
+
+            window.location.href = 'ending.html';
         }
 
         function handleKeyPress(event) {
             if (event.key === 'Enter') {
                 saveNickname();
-
-                window.location.href = 'ending.html';
             }
         }
     </script>
