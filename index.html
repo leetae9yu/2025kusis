@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고려대학교 자유전공학부 새내기새로배움터</title>
+    <style>
+        /* 컨테이너 스타일 - 티스토리 기본 스타일을 유지하면서 버튼 화면만 조정 */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+        }
+        img {
+            width: 300px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 16px;
+            margin: 20px 0;
+        }
+        .start-button {
+            display: inline-block;
+            background-color: #a00000; /* 버튼 배경색 고려대학교 색상 */
+            color: white; /* 버튼 글자색 흰색 */
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .start-button:hover {
+            background-color: #800000; /* 버튼이 더 어두운 붉은색으로 변경 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 고려대학교 글로벌 심볼 이미지 삽입 -->
+        <img src="kusis_logo.png" alt="자전 로고">
+        <!-- 환영 문구 출력 -->
+        <h1>고려대학교 자유전공학부 새내기새로배움터에 오신 것을 환영합니다!</h1>
+        <!-- 게임 시작 버튼 -->
+        <button class="start-button" onclick="startGame()">게임 시작</button>
+    </div>
+    
+    <script>
+        /* 게임 시작 버튼 클릭 시 실행되는 함수 */
+        function startGame() {
+            window.location.href = 'rules.html'; // 규칙 화면으로 이동
+        }
+    </script>
+</body>
+</html>
