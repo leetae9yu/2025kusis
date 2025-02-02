@@ -91,7 +91,7 @@
                 alert("사용하실 닉네임을 입력해주세요.");
                 return;
             }
-            localStorage.setItem("nickname", nickname);
+            sessionStorage.setItem("nickname", nickname);
             alert(`'${nickname}'. 확인되었습니다.`);
 
             window.location.href = 'game_screen2.html';
