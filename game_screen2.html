@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임 화면 2</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .story-box {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #eef;
+            border-radius: 10px;
+        }
+        .input-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .input-box input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 300px;
+            margin-bottom: 10px;
+        }
+        .input-box button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #a00000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .input-box button:hover {
+            background-color: #800000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>게임 스토리</h1>
+        <div class="story-box">(스토리 구성 칸)</div>
+        <p>Q. 고려대학교 자유전공학부 학생 홍보대사 단체의 이름은?</p>
+        <div class="input-box">
+            <input type="text" id="quiz-answer" placeholder="정답 입력" onkeypress="handleKeyPress(event)">
+            <button onclick="checkAnswer()">제출</button>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('quiz-answer').value.trim();
+            if (answer === "자음") {
+                alert("정답입니다.");
+            } else {
+                alert("오답입니다. 다시 시도하세요.");
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                checkAnswer();
+            }
+        }
+    </script>
+</body>
+</html>
