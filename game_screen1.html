@@ -64,7 +64,7 @@
     </div>
 
     <script>
-        function preventBack() {
+        /* function preventBack() {
             history.pushState(null, null, location.href);
             setTimeout(function () {
                 history.pushState(null, null, location.href);
@@ -83,7 +83,7 @@
             }
         });
 
-        preventBack();
+        preventBack(); */
 
         function saveNickname() {
             const nickname = document.getElementById('nickname').value;
@@ -94,8 +94,8 @@
             localStorage.setItem("nickname", nickname);
             alert(`'${nickname}'. 확인되었습니다.`);
 
-        }
             window.location.href = 'game_screen2.html';
+        }
 
         function handleKeyPress(event) {
             if (event.key === 'Enter') {
