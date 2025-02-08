@@ -75,9 +75,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Chapter 2</h1>
+        <h1>Chapter 3</h1>
         <div class="story-box" id="story"></div>
-        <p>Q. 밥약 국룰 장소, 어디일까요?</p>
+        <p>Q. 아직은 임시 버전이니까 무르무르라고 그냥 입력해주세요 ㅎㅎ</p>
         <div class="input-box">
             <input type="text" id="quiz-answer" placeholder="정답 입력" onkeypress="handleKeyPress(event)">
             <button onclick="checkAnswer()">제출</button>
@@ -86,19 +86,13 @@
 
     <script>
         const storyTexts = [
-            "\"네 !! 언제가 괜찮으세요?\"",
-            "<br>서로의 캘린더를 확인하며 일정을 조율해본다.",
-            "<br>\"개강 첫 날! 3월 4일 점심에 어때?\"",
-            "<br>\"좋아요!! 몇 시가 괜찮으세요?\"",
-            "<br>\"내가 수업이 11시 30분에 끝나니까, 12시에 보는 거 어때?\"",
-            "<br>\"좋아요!\"",
-            "<br>\"오케이! 캘린더에 적허놓을게 ㅎㅎ\"",
-            "<br>\"네!! 첫 밥약이라니! 너무 설레요 >.<\"",
-            "<br>\"나도 선배로서 밥약하는 건 처음이네 ㅎㅎ\"",
-            "<br>\"그러면 3월 4일 12시에 어디로 가면 될까요?\"",
-            "<br>\"음.. 밥약 국룰 장소. 어딘지 알지?\"",
-            "<br>\"아 당연히 알죠! OO 말씀하시는 거 맞죠?\"",
-            "<br>\"맞아! 거기서 보는 걸로 하자 ~\""
+            "\'첫 밥약이라니.. 너무 설렌다 ㅠㅠ\'",
+            "<br>그러다 문득, 메뉴에 대한 고민이 떠오른다.",
+            "<br>\'음.. 근데 어떤거 먹자고 말씀 드리지?\'",
+            "<br>\"아! 지도 보고 먼저 찾아 봐야겠다.\"",
+            "<br>지도를 보며 깊은 고민에 빠진다.",
+            "<br>\'오? 여기 맛있어 보이는데?\'",
+            "<br>\'나중에 여기로 가자고 말씀 드려야겠다 !!\'"
         ];
         let storyIndex = 0;
 
@@ -110,9 +104,9 @@
 
         function checkAnswer() {
             const answer = document.getElementById('quiz-answer').value.trim();
-            if (answer === "정후") {
+            if (answer === "무르무르") {
                 alert("정답입니다.");
-                window.location.href = 'game_screen4.html';
+                window.location.href = 'ending.html';
             } else {
                 alert("오답입니다. 다시 시도하세요.");
             }
