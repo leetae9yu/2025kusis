@@ -21,6 +21,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 90%;
             max-width: 500px;
+            overflow-y: auto;
         }
         h1 {
             font-size: 24px;
@@ -32,8 +33,10 @@
             padding: 10px;
             background: #eef;
             border-radius: 10px;
-            min-height: 120px;
+            /*min-height: 120px;*/
+            max-height: 400px;
             line-height: 1.5;
+            overflow-y: auto;
         }
         .input-box {
             display: flex;
@@ -91,11 +94,7 @@
         let storyIndex = 0;
 
         function displayStory() {
-            if (storyIndex < storyTexts.length) {
-                document.getElementById("story").innerHTML += storyTexts[storyIndex] + "<br>";
-                storyIndex++;
-                setTimeout(displayStory, 2000);
-            }
+            document.getElementById("story").innerHTML = storyTexts.join("<br>");
         }
 
         window.onload = displayStory;
