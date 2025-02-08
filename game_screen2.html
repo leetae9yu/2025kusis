@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>게임 화면 2</title>
     <style>
         body {
@@ -10,9 +10,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f5e4c3;
-            font-family: 'EB Garamond', serif;
-            color: #4b3621;
+            background-color: #f8f9fa;
             margin: 0;
         }
         .container {
@@ -21,19 +19,21 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 90%;
+            width: 90%;
+            max-width: 500px;
         }
         h1 {
             font-size: 24px;
             margin-bottom: 20px;
         }
         .story-box {
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 16px;
             margin-bottom: 20px;
             padding: 10px;
             background: #eef;
             border-radius: 10px;
+            min-height: 120px;
+            line-height: 1.5;
         }
         .input-box {
             display: flex;
@@ -59,15 +59,15 @@
             cursor: pointer;
         }
         .input-box button:hover {
-            background-color: #800000
+            background-color: #800000;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>게임 스토리</h1>
-        <div class="story-box">(스토리 구성 칸)</div>
-        <p>Q. 고려대학교 자유전공학부 학생 홍보대사 단체의 이름은?</p>
+        <div class="story-box" id="story"></div>
+        <p>퀴즈: 정답을 입력하세요.</p>
         <div class="input-box">
             <input type="text" id="quiz-answer" placeholder="정답 입력" onkeypress="handleKeyPress(event)">
             <button onclick="checkAnswer()">제출</button>
@@ -75,11 +75,35 @@
     </div>
 
     <script>
+        const storyTexts = [
+            "고그와트 열차에 오른 25학번 새내기.",
+            "<br>설렘과 긴장 속에서 천천히 주위를 둘러본다.",
+            "<br>나와 같은 새내기들과 선배들이 모여 있다.",
+            "<br>선배들은 여유로운 미소로 후배들을 반갑게 맞이한다.",
+            "<br>새내기들은 선배들과 친해지고 싶지만, 어색함에 머뭇거리다 용기를 내어 말을 건넨다.",
+            "<br>\“선배님들, 대학 생활은 어떤가요?\”",
+            "<br>그러자 선배들은 반갑게 웃으며 경험담을 들려주고, 곧 열차 안은 활기찬 이야기로 가득 찬다.",
+            "<br>창밖으로 펼쳐지는 캠퍼스의 풍경 속에서 기대와 설렘이 피어오른다.",
+            "<br>그리고 마지막으로, 선배가 말한다.",
+            "<br>\"다들 더 친해지자! OO OO.\""
+
+        ];
+        let storyIndex = 0;
+
+        function displayStory() {
+            if (storyIndex < storyTexts.length) {
+                document.getElementById("story").innerHTML += storyTexts[storyIndex] + "<br>";
+                storyIndex++;
+                setTimeout(displayStory, 2000);
+            }
+        }
+
+        window.onload = displayStory;
+
         function checkAnswer() {
             const answer = document.getElementById('quiz-answer').value.trim();
-            if (answer === "자음") {
+            if (answer === "밥약 걸어") {
                 alert("정답입니다.");
-
                 window.location.href = 'ending.html';
             } else {
                 alert("오답입니다. 다시 시도하세요.");
