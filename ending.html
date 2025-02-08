@@ -25,13 +25,11 @@
     <div id="congrats-message"></div>
 
     <script>
-        // 세션에서 닉네임 가져오기
         function displayCongratsMessage() {
             const nickname = sessionStorage.getItem("nickname") || "플레이어";
             document.getElementById("congrats-message").textContent = `${nickname}님 축하합니다!`;
         }
 
-        // 페이지 로드 시 메시지 표시
         window.onload = displayCongratsMessage;
     </script>
 </body>

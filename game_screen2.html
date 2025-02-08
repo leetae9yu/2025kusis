@@ -85,6 +85,8 @@
     </div>
 
     <script>
+        const nickname = sessionStorage.getItem("nickname")
+
         const storyTexts = [
             "고그와트 열차에 오른 25학번 새내기.",
             "<br>설렘과 긴장 속에서 천천히 주위를 둘러본다.",
@@ -95,7 +97,7 @@
             "<br>그러자 선배들은 반갑게 웃으며 경험담을 들려주고, 곧 열차 안은 활기찬 이야기로 가득 찬다.",
             "<br>창밖으로 펼쳐지는 캠퍼스의 풍경 속에서 기대와 설렘이 피어오른다.",
             "<br>그리고 마지막으로, 선배가 말한다.",
-            "<br>\"다들 더 친해지자! OO OO.\""
+            '"<br>\"${nickname}!! OO OO.\""'
 
         ];
         let storyIndex = 0;
