@@ -26,9 +26,9 @@
 
     <script>
         function displayCongratsMessage() {
-            const nickname = sessionStorage.getItem("nickname") || "플레이어";
+            const nickname = localStorage.getItem("nickname") || "플레이어";
             const startTime = localStorage.getItem("gameStartTime");
-            
+
             document.addEventListener("DOMContentLoaded", function () {
             if (startTime) {
                 const endTime = new Date().getTime(); // 현재 시간 기록
