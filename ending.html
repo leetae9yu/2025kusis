@@ -28,10 +28,16 @@
     <script>
         function displayCongratsMessage() {
             const nickname = localStorage.getItem("nickname") || "플레이어";
-            const formattedTime = sessionStorage.getItem("formattedTime") || "기록 없음";
+            const formattedTime = sessionStorage.getItem("formattedTime");
+
+            if (formattedTime) {
+                document.getElementById("clear-time").textContent = formattedTime;
+            } else {
+                document.getElementById("clear-time").textContent = "시간 기록 없음";
+                console.log("formattedTime이 저장되지 않았음");
+            }
 
             document.getElementById("congrats-message").textContent = `${nickname}님 축하합니다!`;
-            <br>document.getElementById("clear-time").textContent = formattedTime;
         }
 
         window.onload = displayCongratsMessage;

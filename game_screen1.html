@@ -89,9 +89,22 @@
         }
 
         document.addEventListener("DOMContentLoaded", function () {
-            const startTime = new Date().getTime(); // 현재 시간 기록
-            localStorage.setItem("gameStartTime", startTime);
+            const startTime = localStorage.getItem("gameStartTime");
+
+            if (startTime) {
+                const endTime = new Date().getTime(); // 현재 시간 기록
+                const timeDiff = endTime - parseInt(startTime); // 경과 시간 (밀리초)
+
+                const seconds = Math.floor(timeDiff / 1000) % 60;
+                const minutes = Math.floor(timeDiff / (1000 * 60)) % 60;
+                const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+
+                const formattedTime = `${hours}시간 ${minutes}분 ${seconds}초`;
+
+                sessionStorage.setItem("formattedTime", formattedTime);
+            }
         });
+
     </script>
 </body>
 </html>
