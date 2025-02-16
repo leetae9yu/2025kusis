@@ -89,7 +89,7 @@
         }
 
         document.addEventListener("DOMContentLoaded", function () {
-            const startTime = localStorage.getItem("gameStartTime");
+            const startTime = sessionStorage.getItem("gameStartTime");
 
             if (startTime) {
                 const endTime = new Date().getTime(); // 현재 시간 기록
