@@ -31,7 +31,7 @@
             const formattedTime = sessionStorage.getItem("formattedTime") || "기록 없음";
 
             document.getElementById("congrats-message").textContent = `${nickname}님 축하합니다!`;
-            document.getElementById("clear-time").textContent = formattedTime;
+            <br>document.getElementById("clear-time").textContent = formattedTime;
         }
 
         window.onload = displayCongratsMessage;
