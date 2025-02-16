@@ -26,34 +26,21 @@
     <p>게임 클리어 시간: <span id="clear-time"></span></p>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const startTime = sessionStorage.getItem("gameStartTime");
-            const examNumber = sessionStorage.getItem("examNumber");
-    
-            if (startTime) {
-                const endTime = new Date().getTime(); // 현재 시간 기록
-                const timeDiff = endTime - parseInt(startTime); // 경과 시간 (밀리초)
-      
-            const seconds = Math.floor(timeDiff / 1000) % 60;
-            const minutes = Math.floor(timeDiff / (1000 * 60)) % 60;
-            const hours = Math.floor(timeDiff / (1000 * 60 * 60));
-      
-            const formattedTime = `${hours}시간 ${minutes}분 ${seconds}초`;
-            sessionStorage.setItem("formattedTime", formattedTime); // sessionStorage에 저장
-            document.getElementById("clear-time").textContent = formattedTime;
+        function displayCongratsMessage() {
+            const nickname = localStorage.getItem("nickname") || "플레이어";
+            const formattedTime = sessionStorage.getItem("formattedTime");
+
+            if (formattedTime) {
+                document.getElementById("clear-time").textContent = formattedTime;
             } else {
                 document.getElementById("clear-time").textContent = "시간 기록 없음";
+                console.log("formattedTime이 저장되지 않았음");
             }
-    
-            if (examNumber) {
-                document.getElementById("exam-number").textContent = examNumber;
-            } else {
-                document.getElementById("exam-number").textContent = "수험번호 없음";
-            }
-        });
-</script>
 
-<p>게임 클리어 시간: <span id="clear-time"></span></p>
-<p>수험번호: <span id="exam-number"></span></p>
+            document.getElementById("congrats-message").textContent = ${nickname}님 축하합니다!;
+        }
+
+        window.onload = displayCongratsMessage;
+    </script>
 </body>
 </html>
