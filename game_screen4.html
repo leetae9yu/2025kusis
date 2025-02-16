@@ -77,7 +77,7 @@
     <div class="container">
         <h1>Chapter 3</h1>
         <div class="story-box" id="story"></div>
-        <p>Q. 아직은 임시 버전이니까 무르무르라고 그냥 입력해주세요 ㅎㅎ</p>
+        <p>Q. 밥약 장소, 어디일까요?</p>
         <div class="input-box">
             <input type="text" id="quiz-answer" placeholder="정답 입력" onkeypress="handleKeyPress(event)">
             <button onclick="checkAnswer()">제출</button>
@@ -86,13 +86,12 @@
 
     <script>
         const storyTexts = [
-            "\'첫 밥약이라니.. 너무 설렌다 ㅠㅠ\'",
-            "<br>그러다 문득, 메뉴에 대한 고민이 떠오른다.",
-            "<br>\'음.. 근데 어떤거 먹자고 말씀 드리지?\'",
-            "<br>\"아! 지도 보고 먼저 찾아 봐야겠다.\"",
-            "<br>지도를 보며 깊은 고민에 빠진다.",
-            "<br>\'오? 여기 맛있어 보이는데?\'",
-            "<br>\'나중에 여기로 가자고 말씀 드려야겠다 !!\'"
+            "\'정후에서 만나는 게 국룰이구나…\'",
+            "<br>\'선배가 먹고 싶은 거 다 사주신다는데\'",
+            "<br>\'어느 음식점이 좋을까?\'",
+            "<br>그때, 선배가 놓고 간 쪽지가 하나 보인다.",
+            "\'이게 뭐지??\'"
+            <img src="1st.png" alt="쪽지">
         ];
         let storyIndex = 0;
 
@@ -104,7 +103,7 @@
 
         function checkAnswer() {
             const answer = document.getElementById('quiz-answer').value.trim();
-            if (answer === "무르무르") {
+            if (answer === "무르무르드구스토") {
                 alert("정답입니다.");
                 window.location.href = 'test_ending.html';
             } else {

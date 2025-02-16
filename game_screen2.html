@@ -85,18 +85,20 @@
     </div>
 
     <script>
-        const nickname = sessionStorage.getItem("nickname") || "플레이어";
-        const storyTexts = [
-            "고그와트 열차에 오른 25학번 새내기.",
-            "<br>주위를 둘러보니 25학번 신입생과 24학번 이상의 선배들도 여럿 보인다.",
-            '<br> ${nickname}: \"우와 선배님, 친해지고 싶어요!\"',
-            "<br>선배: \"그래? 나랑 친해고 싶으면 이 미로를 한번 풀어볼래?\""
-        ];
-
+        const nickname = localStorage.getItem("nickname") || "플레이어";
+        
         let storyIndex = 0;
 
         function displayStory() {
+            const storyTexts = [
+            "고그와트 열차에 오른 25학번 새내기.",
+            "<br>주위를 둘러보니 25학번 신입생과 24학번 이상의 선배들도 여럿 보인다.",
+            `<br>\"우와 ${nickname} 선배님, 친해지고 싶어요!\"`,
+            "<br>선배: \"그래? 나랑 친해지고 싶으면 이 미로를 한번 풀어볼래?\""
+        ];
+
             document.getElementById("story").innerHTML = storyTexts.join("<br>");
+
         }
 
         window.onload = displayStory;

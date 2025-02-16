@@ -76,7 +76,7 @@
                 alert("사용하실 닉네임을 입력해주세요.");
                 return;
             }
-            sessionStorage.setItem("nickname", nickname);
+            localStorage.setItem("nickname", nickname);
             alert(`'${nickname}'. 확인되었습니다.`);
 
             window.location.href = 'game_screen2.html';
@@ -89,7 +89,7 @@
         }
 
         document.addEventListener("DOMContentLoaded", function () {
-            const startTime = new Date().getTime(); // 현재 시간 기록 (밀리초 단위)
+            const startTime = new Date().getTime(); // 현재 시간 기록
             localStorage.setItem("gameStartTime", startTime);
         });
     </script>
