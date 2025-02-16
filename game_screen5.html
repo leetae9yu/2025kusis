@@ -48,7 +48,7 @@
             display: block;
             margin: 10px auto; /* 가운데 정렬 */
             border-radius: 10px; /* 둥근 모서리 */
-            width: 85%;
+            width: 60%;
         }
         .input-box {
             display: flex;
@@ -90,12 +90,15 @@
     </div>
 
     <script>
+        const nickname = localStorage.getItem("nickname") || "플레이어";
+
         const storyTexts = [
             "드디어 밥약 당일날, 무르무르에서 만난 두 사람은 이야기를 시작한다.",
-            `<br>${nickname}: \"선배! 첫 시간표 짜봤는데 어때요?\"`
-            "<br>선배: \"선: 아니 이게 뭐야!! 수업은 전부 1교시 시작이고, 공강도 없고, 점심시간도 없다니… 밥약은 언제 하려고!\"",
+            `<br>${nickname}: \"선배! 첫 시간표 짜봤는데 어때요?\"`,
+            `<br><img src="3rd.png" alt="시간표">`,
+            "<br>선배: \"아니 이게 뭐야!! 수업은 전부 1교시 시작이고, 공강도 없고, 점심시간도 없다니… 밥약은 언제 하려고!\"",
             "<br>\'아.. 잘못 짠건가?\'",
-            `<br>선배: ${nickname}아, 다시 생각해보자.`
+            `<br>선배: ${nickname}아, 다시 생각해보자.`,
             "<br>선배: 먼저 자전 1학년이 들어야 하는 교양들부터 시간표에 남겨보자."
         ];
         let storyIndex = 0;
