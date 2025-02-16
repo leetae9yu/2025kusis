@@ -27,6 +27,24 @@
     <script>
         function displayCongratsMessage() {
             const nickname = sessionStorage.getItem("nickname") || "플레이어";
+            const startTime = localStorage.getItem("gameStartTime");
+            
+            document.addEventListener("DOMContentLoaded", function () {
+            if (startTime) {
+                const endTime = new Date().getTime(); // 현재 시간 기록
+                const timeDiff = endTime - parseInt(startTime); // 경과 시간 (밀리초)
+      
+                const seconds = Math.floor(timeDiff / 1000) % 60;
+                const minutes = Math.floor(timeDiff / (1000 * 60)) % 60;
+                const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+      
+                const formattedTime = `${hours}${minutes}${seconds}`;
+                document.getElementById("clear-time").textContent = formattedTime;
+            } else {
+                document.getElementById("clear-time").textContent = "게임 시작 시간이 기록되지 않았습니다.";
+            }
+        });
+
             document.getElementById("congrats-message").textContent = `${nickname}님 축하합니다!`;
         }
 
