@@ -80,6 +80,23 @@
         </div>
     </div>
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const startTime = localStorage.getItem("gameStartTime");
+            if (startTime) {
+                const endTime = new Date().getTime(); // 현재 시간 기록
+                const timeDiff = endTime - parseInt(startTime); // 경과 시간 (밀리초)
+      
+                const seconds = Math.floor(timeDiff / 1000) % 60;
+                const minutes = Math.floor(timeDiff / (1000 * 60)) % 60;
+                const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+      
+                const formattedTime = `${hours}시간 ${minutes}분 ${seconds}초`;
+                document.getElementById("clear-time").textContent = formattedTime;
+            } else {
+                document.getElementById("clear-time").textContent = "게임 시작 시간이 기록되지 않았습니다.";
+            }
+        });
+
         // 사용자 이름 및 수험번호 처리
         document.getElementById('nickname').textContent = sessionStorage.getItem('nickname') || '이름 없음';
 

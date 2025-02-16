@@ -87,6 +87,11 @@
                 saveNickname();
             }
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const startTime = new Date().getTime(); // 현재 시간 기록 (밀리초 단위)
+            localStorage.setItem("gameStartTime", startTime);
+        });
     </script>
 </body>
 </html>
