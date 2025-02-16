@@ -77,7 +77,7 @@
     <div class="container">
         <h1>Chapter 1</h1>
         <div class="story-box" id="story"></div>
-        <p>Q. 선배가 한 말 중, OO OO에 들어갈 말은 무엇인가요? (밥약 걸어)</p>
+        <p>선배가 듣고 싶었던 말은 무엇일까요?</p>
         <div class="input-box">
             <input type="text" id="quiz-answer" placeholder="정답 입력" onkeypress="handleKeyPress(event)">
             <button onclick="checkAnswer()">제출</button>
@@ -88,15 +88,9 @@
         const nickname = sessionStorage.getItem("nickname") || "플레이어";
         const storyTexts = [
             "고그와트 열차에 오른 25학번 새내기.",
-            "<br>설렘과 긴장 속에서 천천히 주위를 둘러본다.",
-            "<br>나와 같은 새내기들과 선배들이 모여 있다.",
-            "<br>선배들은 여유로운 미소로 후배들을 반갑게 맞이한다.",
-            "<br>새내기들은 선배들과 친해지고 싶지만, 어색함에 머뭇거리다 용기를 내어 말을 건넨다.",
-            "<br>\"선배님들, 대학 생활은 어떤가요?\"",
-            `<br>그러자 선배들은 반갑게 웃으며 경험담을 들려주고, 곧 열차 안은 활기찬 이야기로 가득 찬다.`,
-            `<br>창밖으로 펼쳐지는 캠퍼스의 풍경 속에서 기대와 설렘이 피어오른다.`,
-            `<br>그리고 마지막으로, 선배가 말한다.`,
-            `<br>\"${nickname}!! 너도 OO OO.\"`
+            "<br>주위를 둘러보니 25학번 신입생과 24학번 이상의 선배들도 여럿 보인다.",
+            '<br> ${nickname}: \"우와 선배님, 친해지고 싶어요!\"'
+            "<br>선배: \"그래? 나랑 친해지려면 이 미로를 해결해서 나에게 알려줄래?\"",
         ];
 
         let storyIndex = 0;
@@ -110,7 +104,7 @@
 
         function checkAnswer() {
             const answer = document.getElementById('quiz-answer').value.trim();
-            if (answer === "밥약 걸어") {
+            if (answer === "밥약") {
                 alert("정답입니다.");
                 window.location.href = 'game_screen3.html';
             } else {

@@ -90,7 +90,7 @@
                 const minutes = Math.floor(timeDiff / (1000 * 60)) % 60;
                 const hours = Math.floor(timeDiff / (1000 * 60 * 60));
       
-                const formattedTime = `${hours}시간 ${minutes}분 ${seconds}초`;
+                const formattedTime = `${hours}${minutes}${seconds}`;
                 document.getElementById("clear-time").textContent = formattedTime;
             } else {
                 document.getElementById("clear-time").textContent = "게임 시작 시간이 기록되지 않았습니다.";
