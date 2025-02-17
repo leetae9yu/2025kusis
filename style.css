@@ -5,21 +5,24 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f5e4c3;
+    width: 100vw;
+    background: url('images/background.png') no-repeat center center fixed;
+    background-size: cover;
     font-family: 'EB Garamond', serif;
     color: #4b3621;
     margin: 0;
     padding: 5vw;
+    overflow: hidden;
 }
 
 /* 스토리 박스 (컨테이너 제거) */
 .story-box {
     font-size: 4vw;
     padding: 3vw;
-    background: #eef;
+    background: rgba(238, 238, 255, 0.9);
     border-radius: 10px;
     max-width: 90vw;
-    max-height: 70vh;
+    max-height: 80vh;
     line-height: 1.5;
     overflow-y: auto;
     text-align: left;
@@ -74,11 +77,12 @@ button:hover {
 @media (max-width: 480px) {
     body {
         padding: 3vw;
+        overflow: hidden;
     }
 
     .story-box {
         font-size: 5vw;
-        max-height: 75vh;
+        max-height: 85vh;
     }
 
     .input-box input {
