@@ -1,0 +1,101 @@
+/* 기본 */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5e4c3;
+    font-family: 'EB Garamond', serif;
+    color: #4b3621;
+    margin: 0;
+}
+
+/* 컨테이너 */
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 95vh;
+    overflow-y: auto;
+    background: url('images/background.png') no-repeat center center;
+    background-size: 100% 100%;
+    border: 3px solid #6e4c2a;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 제목 */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* 제출 버튼 */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #a00000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #800000;
+}
+
+/* 정답 박스 */
+.input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-box input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
+
+/* 스토리 박스 */
+.story-box {
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #eef;
+    border-radius: 10px;
+    max-height: 400px;
+    line-height: 1.5;
+    overflow-y: auto;
+    text-align: left;
+}
+
+/* 이미지 */
+.story-box img {
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+    width: 85%;
+}
+
+/* 엔딩 화면 */
+.ending-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    background: url('images/background.png') no-repeat center center;
+    background-size: 100% 100%;
+    font-family: 'EB Garamond', serif;
+}

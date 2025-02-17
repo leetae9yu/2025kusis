@@ -4,80 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>게임 화면 2</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f5e4c3;
-            font-family: 'EB Garamond', serif;
-            color: #4b3621;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            background-color: #f5e4c3;
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 500px;
-            max-height: 95vh;
-            overflow-y: auto;
-            background: url('background.png') no-repeat center center;
-            background-size: 100% 100%;
-            border: 3px solid #6e4c2a;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .story-box {
-            font-size: 16px;
-            margin-bottom: 20px;
-            padding: 10px;
-            background: #eef;
-            border-radius: 10px;
-            /*min-height: 120px;*/
-            max-height: 400px;
-            line-height: 1.5;
-            overflow-y: auto;
-        }
-        .story-box img {
-            display: block;
-            margin: 10px auto; /* 가운데 정렬 */
-            border-radius: 10px; /* 둥근 모서리 */
-            width: 85%;
-        }
-        .input-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .input-box input {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 80%;
-            max-width: 300px;
-            margin-bottom: 10px;
-        }
-        .input-box button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #a00000;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .input-box button:hover {
-            background-color: #800000;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -85,47 +13,32 @@
         <div class="story-box" id="story"></div>
         <p>선배가 듣고 싶었던 말은 무엇일까요?</p>
         <div class="input-box">
-            <input type="text" id="quiz-answer" placeholder="정답 입력" onkeypress="handleKeyPress(event)">
+            <input type="text" id="quiz-answer" placeholder="정답 입력">
             <button onclick="checkAnswer()">제출</button>
         </div>
     </div>
 
-    <script>
-        const nickname = localStorage.getItem("nickname") || "플레이어";
-        
-        let storyIndex = 0;
+    <div class="story-box" id="story"></div>
 
-        function displayStory() {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nickname = localStorage.getItem("nickname") || "플레이어";
             const storyTexts = [
-            "고그와트 열차에 오른 25학번 새내기.",
-            "<br>주위를 둘러보니 25학번 신입생과 24학번 이상의 선배들도 여럿 보인다.",
-            `<br>${nickname}: \"우와 선배님, 친해지고 싶어요!\"`,
-            "<br>선배: \"그래? 나랑 친해지고 싶으면 이 미로를 한번 풀어볼래?\"",
-            `<br><img src="1st.png" alt="미로">`
+            "고그와트 행 열차에 오른 새내기들.",
+            "<br><br>25학번 신입생들 사이로 24학번 이상의 선배들도 여럿 보인다.",
+            `<br><br>어색한 기류 속에서도 곳곳에서 인사와 대화가 오간다.`,
+            `<br><br><strong>${nickname}</strong>: "선배님, 안녕하세요! 친해지고 싶어요!"`,
+            `<br><br>선배는 웃으며 말했다.`,
+            `<br><br><strong>선배</strong>: "좋지! 근데 그냥 친해지긴 아쉽잖아? 미로 하나 풀어볼래?"`,
+            `<br><br>선배가 건넨 쪽지에는 복잡한 길이 그려져 있었다.`,
+            `<br><br><strong>선배</strong>: "뭐, 꼭 풀어야 친해지는 건 아니지만, 하면 더 재밌지 않을까?"`,
+            `<br><br>나는 웃으며 쪽지를 펼쳤다.`,
+            `<br><br><strong>${nickname}</strong>: "이 정도야 뭐, 금방 풀죠!"`,
+            "<img src='images/1st.png' alt='미로' width=90%>"
         ];
 
             document.getElementById("story").innerHTML = storyTexts.join("<br>");
-
-        }
-
-        window.onload = displayStory;
-
-
-        function checkAnswer() {
-            const answer = document.getElementById('quiz-answer').value.trim();
-            if (answer === "밥약") {
-                alert("정답입니다.");
-                window.location.href = 'game_screen3.html';
-            } else {
-                alert("오답입니다. 다시 시도하세요.");
-            }
-        }
-
-        function handleKeyPress(event) {
-            if (event.key === 'Enter') {
-                checkAnswer();
-            }
-        }
+        });
     </script>
 </body>
 </html>

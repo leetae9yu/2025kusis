@@ -4,126 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>게임 화면 2</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f5e4c3;
-            font-family: 'EB Garamond', serif;
-            color: #4b3621;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            background-color: #f5e4c3;
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 500px;
-            max-height: 95vh;
-            overflow-y: auto;
-            background: url('background.png') no-repeat center center;
-            background-size: 100% 100%;
-            border: 3px solid #6e4c2a;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .story-box {
-            font-size: 16px;
-            margin-bottom: 20px;
-            padding: 10px;
-            background: #eef;
-            border-radius: 10px;
-            max-height: 400px;
-            line-height: 1.5;
-            overflow-y: auto;
-        }
-        .story-box img {
-            display: block;
-            margin: 10px auto; /* 가운데 정렬 */
-            border-radius: 10px; /* 둥근 모서리 */
-            width: 60%;
-        }
-        .input-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .input-box input {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 80%;
-            max-width: 300px;
-            margin-bottom: 10px;
-        }
-        .input-box button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #a00000;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .input-box button:hover {
-            background-color: #800000;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <h1>Chapter 3</h1>
+        <h1>Chapter 4</h1>
         <div class="story-box" id="story"></div>
         <p>Q. 선배의 말을 듣고 남겨둔 과목들, 어떤 모양인가요?</p>
         <div class="input-box">
-            <input type="text" id="quiz-answer" placeholder="정답 입력" onkeypress="handleKeyPress(event)">
+            <input type="text" id="quiz-answer" placeholder="정답 입력">
             <button onclick="checkAnswer()">제출</button>
         </div>
     </div>
 
     <script>
-        const nickname = localStorage.getItem("nickname") || "플레이어";
-
-        const storyTexts = [
-            "드디어 밥약 당일날, 무르무르에서 만난 두 사람은 이야기를 시작한다.",
-            `<br>${nickname}: \"선배! 첫 시간표 짜봤는데 어때요?\"`,
-            `<br><img src="3rd.png" alt="시간표">`,
-            "<br>선배: \"아니 이게 뭐야!! 수업은 전부 1교시 시작이고, 공강도 없고, 점심시간도 없다니… 밥약은 언제 하려고!\"",
-            "<br>\'아.. 잘못 짠건가?\'",
-            `<br>선배: ${nickname}아, 다시 생각해보자.`,
-            "<br>선배: 먼저 자전 1학년이 들어야 하는 교양들부터 시간표에 남겨보자."
+        document.addEventListener("DOMContentLoaded", function () {
+            const nickname = localStorage.getItem("nickname") || "플레이어";
+            const storyTexts = [
+            `드디어 밥약 당일.`,
+            `<br><br>선배를 만나자마자 나는 자랑스럽게 시간표를 보여주었다.`,
+            `<br><br><strong>${nickname}</strong>: "선배! 첫 시간표 짜봤는데 어때요?"`,
+            `<br><br>그런데 선배의 반응이 예상과 달랐다.`,
+            `<br><br><strong>선배</strong>: "아니 이게 뭐야!! 수업이 전부 1교시 시작이고, 공강도 없고, 점심시간도 없다니… 밥약은 언제 하려고?"`,
+            `<br><br>나는 머쓱해져서 웃으며 말했다.`,
+            `<br><br><strong>${nickname}</strong>: "그냥 최대한 알차게 넣어봤어요… ㅎㅎ"`,
+            `<br><br>선배는 한숨을 쉬더니 내 어깨를 두드렸다.`,
+            `<br><br><strong>선배</strong>: "자, ${nickname}야. 다시 생각해보자."`,
+            `<br><br><strong>선배</strong>: "일단 자전 1학년이 꼭 들어야 하는 교양들부터 시간표에서 먼저 남겨봐."`,
+            `<br><br>나는 노트를 펴고, 선배의 조언을 들으며 시간표를 다시 손보기 시작했다.`,
+            "<img src='images/3rd.png' alt='시간표' width=90%>"
         ];
-        let storyIndex = 0;
 
-        function displayStory() {
             document.getElementById("story").innerHTML = storyTexts.join("<br>");
-        }
-
-        window.onload = displayStory;
-
-        function checkAnswer() {
-            const answer = document.getElementById('quiz-answer').value.trim();
-            if (answer === "w") {
-                alert("정답입니다.");
-                window.location.href = 'ending.html';
-            } else {
-                alert("오답입니다. 다시 시도하세요.");
-            }
-        }
-
-        function handleKeyPress(event) {   
-            if (event.key === 'Enter') {
-                checkAnswer();
-            }
-        }
+        });
     </script>
 </body>
 </html>

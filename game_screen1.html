@@ -4,60 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게임 화면</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f5e4c3;
-            font-family: 'EB Garamond', serif;
-            color: #4b3621;
-            margin: 0;
-        }
-        .container {
-            position: relative;
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            background: url('background.png') no-repeat center center;
-            background-size: 100% 100%;
-            border: 3px solid #6e4c2a;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .input-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .input-box input {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 80%;
-            max-width: 300px;
-            margin-bottom: 10px;
-        }
-        .input-box button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #a00000;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .input-box button:hover {
-            background-color: #800000;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -68,43 +16,5 @@
             <button onclick="saveNickname()">저장</button>
         </div>
     </div>
-
-    <script>
-        function saveNickname() {
-            const nickname = document.getElementById('nickname').value;
-            if (nickname.trim() === "") {
-                alert("사용하실 닉네임을 입력해주세요.");
-                return;
-            }
-            localStorage.setItem("nickname", nickname);
-            alert(`'${nickname}'. 확인되었습니다.`);
-
-            window.location.href = 'game_screen2.html';
-        }
-
-        function handleKeyPress(event) {
-            if (event.key === 'Enter') {
-                saveNickname();
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const startTime = sessionStorage.getItem("gameStartTime");
-
-            if (startTime) {
-                const endTime = new Date().getTime(); // 현재 시간 기록
-                const timeDiff = endTime - parseInt(startTime); // 경과 시간 (밀리초)
-
-                const seconds = Math.floor(timeDiff / 1000) % 60;
-                const minutes = Math.floor(timeDiff / (1000 * 60)) % 60;
-                const hours = Math.floor(timeDiff / (1000 * 60 * 60));
-
-                const formattedTime = `${hours}시간 ${minutes}분 ${seconds}초`;
-
-                sessionStorage.setItem("formattedTime", formattedTime);
-            }
-        });
-
-    </script>
 </body>
 </html>

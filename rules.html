@@ -4,76 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게임 규칙</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f5e4c3;
-            font-family: 'EB Garamond', serif;
-            color: #4b3621;
-            margin: 0;
-        }
-        .container {
-            position: relative;
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            background: url('background.png') no-repeat center center;
-            background-size: 100% 100%;
-            border: 3px solid #6e4c2a;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            text-align: center;
-            font-family: 'Cloister Black', serif;
-        }
-        ul {
-            text-align: left;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-        .logo {
-            display: block;
-            margin: 0 auto 20px auto;
-            max-width: 100px;
-        }
-        .input-box {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .input-box input {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 80%;
-            max-width: 300px;
-            margin-bottom: 10px;
-        }
-        .input-box button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #a00000;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .input-box button:hover {
-            background-color: #800000;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -90,23 +22,5 @@
             <button onclick="checkAnswer()">제출</button>
         </div>
     </div>
-
-    <script>
-        function checkAnswer() {
-            const answer = document.getElementById('answer').value;
-            if (answer === "자전") {
-                alert("환영합니다.");
-                window.location.href = 'game_screen1.html'; // 게임 화면1로 이동
-            } else {
-                alert("정답이 아닙니다. 다시 시도해주세요.");
-            }
-        }
-
-        function handleKeyPress(event) {
-            if (event.key === 'Enter') {
-                checkAnswer();
-            }
-        }
-    </script>   
 </body>
 </html>

@@ -11,8 +11,7 @@
     <div class="container">
         <h1>Chapter 3</h1>
         <div class="story-box" id="story"></div>
-        <p>Q. 밥약 장소, 어디일까요?</p>
-        <p>(띄어쓰기 없이 입력해주세요!)</p>
+        <p>Q. 선배의 말을 듣고 남겨둔 과목들, 어떤 모양인가요?</p>
         <div class="input-box">
             <input type="text" id="quiz-answer" placeholder="정답 입력">
             <button onclick="checkAnswer()">제출</button>
@@ -21,16 +20,10 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            const nickname = localStorage.getItem("nickname") || "플레이어";
             const storyTexts = [
-            `'정후에서 만나는 게 국룰이구나...'`,
-            `<br><br>약속 장소는 정경대후문. 이제 문제는 메뉴 선택이었다.`,
-            `<br><br>'선배가 먹고 싶은 거 다 사주신다는데, 어디로 가야 하지?'`,
-            `<br><br>'맛집이 너무 많아 고민이 됐다. 학식은 좀 그렇고, 분위기 좋은 곳이 좋을 것 같았다.'`,
-            `<br><br>고민하던 와중, 선배가 힌트를 줬다.`,
-            `<br><br>쪽지 한 장을 남기신 채, 사라지셨다.`,
-            `<br><br>'어디로 가야하지..?'`,
-            `<br><br>쪽지를 보며, 나는 고민에 빠졌다.`,
-            "<img src='images/2nd.png' alt='쪽지' width=90%>"
+            `일단 캠투라고 적어주세요.`,
+            "<img src='images/4th.png' alt='캠퍼스' width=90%>"
         ];
 
             document.getElementById("story").innerHTML = storyTexts.join("<br>");
