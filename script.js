@@ -135,7 +135,7 @@ function saveTotalGameTime() {
 // ✅ 엔딩 메시지 표시
 function displayCongratsMessage() {
     const nickname = localStorage.getItem("nickname") || "플레이어";
-    document.getElementById("congrats-message").textContent = `${nickname}님 축하합니다!<br>`;
+    document.getElementById("congrats-message").textContent = `${nickname}님 축하합니다!`;
 }
 
 // ✅ 엔딩 페이지에서 총 플레이 시간 출력
