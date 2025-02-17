@@ -1,6 +1,7 @@
 /* 기본 스타일 */
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -8,27 +9,39 @@ body {
     font-family: 'EB Garamond', serif;
     color: #4b3621;
     margin: 0;
-}
-
-/* 컨테이너 반응형 조정 */
-.container {
-    text-align: center;
     padding: 5vw;
-    border-radius: 15px;
-    width: 90vw;
-    max-width: 500px;
-    max-height: 90vh;
-    overflow-y: auto;
-    background: url('images/background.png') no-repeat center center;
-    background-size: cover;
-    border: 3px solid #6e4c2a;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* 제목 크기 조정 */
-h1 {
-    font-size: 5vw;
-    margin-bottom: 3vw;
+/* 스토리 박스 (컨테이너 제거) */
+.story-box {
+    font-size: 4vw;
+    padding: 3vw;
+    background: #eef;
+    border-radius: 10px;
+    max-width: 90vw;
+    max-height: 70vh;
+    line-height: 1.5;
+    overflow-y: auto;
+    text-align: left;
+}
+
+/* 입력창 크기 조정 */
+.input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 5vw;
+}
+
+.input-box input {
+    padding: 3vw;
+    font-size: 4vw;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 2vw;
 }
 
 /* 버튼 크기 및 터치 영역 확대 */
@@ -49,37 +62,6 @@ button:hover {
     background-color: #800000;
 }
 
-/* 입력창 크기 조정 */
-.input-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.input-box input {
-    padding: 2.5vw;
-    font-size: 4vw;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 300px;
-    margin-bottom: 2vw;
-}
-
-/* 스토리 박스 조정 */
-.story-box {
-    font-size: 4vw;
-    margin-bottom: 3vw;
-    padding: 3vw;
-    background: #eef;
-    border-radius: 10px;
-    max-height: 50vh;
-    line-height: 1.5;
-    overflow-y: auto;
-    text-align: left;
-}
-
 /* 이미지 스타일 조정 */
 .story-box img {
     display: block;
@@ -90,18 +72,13 @@ button:hover {
 
 /* 반응형 스타일 */
 @media (max-width: 480px) {
-    .container {
-        width: 95vw;
-        padding: 6vw;
+    body {
+        padding: 3vw;
     }
 
-    h1 {
-        font-size: 6vw;
-    }
-
-    button {
+    .story-box {
         font-size: 5vw;
-        padding: 4vw;
+        max-height: 75vh;
     }
 
     .input-box input {
@@ -109,8 +86,8 @@ button:hover {
         padding: 3vw;
     }
 
-    .story-box {
+    button {
         font-size: 5vw;
-        max-height: 60vh;
+        padding: 4vw;
     }
 }
