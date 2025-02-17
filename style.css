@@ -1,4 +1,4 @@
-/* 기본 */
+/* 기본 스타일 */
 body {
     display: flex;
     justify-content: center;
@@ -10,92 +10,107 @@ body {
     margin: 0;
 }
 
-/* 컨테이너 */
+/* 컨테이너 반응형 조정 */
 .container {
     text-align: center;
-    padding: 20px;
+    padding: 5vw;
     border-radius: 15px;
-    width: 90%;
+    width: 90vw;
     max-width: 500px;
-    max-height: 95vh;
+    max-height: 90vh;
     overflow-y: auto;
     background: url('images/background.png') no-repeat center center;
-    background-size: 100% 100%;
+    background-size: cover;
     border: 3px solid #6e4c2a;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* 제목 */
+/* 제목 크기 조정 */
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 5vw;
+    margin-bottom: 3vw;
 }
 
-/* 제출 버튼 */
+/* 버튼 크기 및 터치 영역 확대 */
 button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 3vw;
+    font-size: 4vw;
     background-color: #a00000;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    width: 80%;
+    max-width: 300px;
+    margin-top: 2vw;
 }
 
 button:hover {
     background-color: #800000;
 }
 
-/* 정답 박스 */
+/* 입력창 크기 조정 */
 .input-box {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .input-box input {
-    padding: 10px;
-    font-size: 16px;
+    padding: 2.5vw;
+    font-size: 4vw;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 80%;
     max-width: 300px;
-    margin-bottom: 10px;
+    margin-bottom: 2vw;
 }
 
-/* 스토리 박스 */
+/* 스토리 박스 조정 */
 .story-box {
-    font-size: 16px;
-    margin-bottom: 20px;
-    padding: 10px;
+    font-size: 4vw;
+    margin-bottom: 3vw;
+    padding: 3vw;
     background: #eef;
     border-radius: 10px;
-    max-height: 400px;
+    max-height: 50vh;
     line-height: 1.5;
     overflow-y: auto;
     text-align: left;
 }
 
-/* 이미지 */
+/* 이미지 스타일 조정 */
 .story-box img {
     display: block;
-    margin: 10px auto;
+    margin: 3vw auto;
     border-radius: 10px;
-    width: 85%;
+    width: 90%;
 }
 
-/* 엔딩 화면 */
-.ending-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f8f9fa;
-    margin: 0;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    background: url('images/background.png') no-repeat center center;
-    background-size: 100% 100%;
-    font-family: 'EB Garamond', serif;
+/* 반응형 스타일 */
+@media (max-width: 480px) {
+    .container {
+        width: 95vw;
+        padding: 6vw;
+    }
+
+    h1 {
+        font-size: 6vw;
+    }
+
+    button {
+        font-size: 5vw;
+        padding: 4vw;
+    }
+
+    .input-box input {
+        font-size: 5vw;
+        padding: 3vw;
+    }
+
+    .story-box {
+        font-size: 5vw;
+        max-height: 60vh;
+    }
 }
