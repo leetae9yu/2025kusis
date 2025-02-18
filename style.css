@@ -1,118 +1,101 @@
 /* 기본 스타일 */
 body {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 100vw;
-    background: url('images/background.png') no-repeat center center fixed;
-    background-size: cover;
+    background-color: #f5e4c3;
     font-family: 'EB Garamond', serif;
     color: #4b3621;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-    box-sizing: border-box;
 }
 
-/* 전체 레이아웃 조정 */
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90vw;
-    height: 95vh;
-    max-width: 500px;
-    overflow: hidden;
+/* 컨테이너 */
+.container {
     text-align: center;
-}
-
-/* 스토리 박스 (모든 화면에 맞게 조정) */
-.story-box {
-    font-size: 4vw;
-    padding: 3vw;
-    background: rgba(238, 238, 255, 0.9);
-    border-radius: 10px;
-    width: 85vw;
-    max-width: 450px;
-    max-height: 60vh;
-    line-height: 1.5;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 95vh;
     overflow-y: auto;
-    text-align: left;
+    background: url('images/background.png') no-repeat center center;
+    background-size: 100% 100%;
+    border: 3px solid #6e4c2a;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* 입력창 크기 조정 */
-.input-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 85vw;
-    max-width: 450px;
-    margin-top: 2vw;
+/* 제목 */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-.input-box input {
-    padding: 3vw;
-    font-size: 4vw;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    width: 100%;
-    margin-bottom: 2vw;
-}
-
-/* 버튼 크기 및 터치 영역 확대 */
+/* 제출 버튼 */
 button {
-    padding: 3vw;
-    font-size: 4vw;
+    padding: 10px 20px;
+    font-size: 16px;
     background-color: #a00000;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    width: 100%;
-    max-width: 300px;
-    margin-top: 2vw;
 }
 
 button:hover {
     background-color: #800000;
 }
 
-/* 이미지 스타일 조정 */
-.story-box img {
-    display: block;
-    margin: 3vw auto;
-    border-radius: 10px;
-    width: 100%;
+/* 정답 박스 */
+.input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* 반응형 스타일 */
-@media (max-width: 480px) {
-    body {
-        padding: 0;
-        overflow: hidden;
-    }
+.input-box input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
 
-    .wrapper {
-        width: 95vw;
-        height: 95vh;
-    }
+/* 스토리 박스 */
+.story-box {
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #eef;
+    border-radius: 10px;
+    max-height: 400px;
+    line-height: 1.5;
+    overflow-y: auto;
+    text-align: left;
+}
 
-    .story-box {
-        font-size: 5vw;
-        max-height: 65vh;
-        width: 90vw;
-    }
+/* 이미지 */
+.story-box img {
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+    width: 85%;
+}
 
-    .input-box input {
-        font-size: 5vw;
-        padding: 3vw;
-    }
-
-    button {
-        font-size: 5vw;
-        padding: 4vw;
-    }
+/* 엔딩 화면 */
+.ending-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    background: url('images/background.png') no-repeat center center;
+    background-size: 100% 100%;
+    font-family: 'EB Garamond', serif;
 }
