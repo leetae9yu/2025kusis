@@ -11,7 +11,7 @@
     <div class="container">
         <h1>Chapter 3</h1>
         <div class="story-box" id="story"></div>
-        <p>Q. 선배의 말을 듣고 남겨둔 과목들, 어떤 모양인가요?</p>
+        <p>Q. 선배와 함께 갔던 건물, 지도를 보니 뭔가 보이는데?</p>
         <div class="input-box">
             <input type="text" id="quiz-answer" placeholder="정답 입력">
             <button onclick="checkAnswer()">제출</button>
@@ -22,8 +22,17 @@
         document.addEventListener("DOMContentLoaded", function () {
             const nickname = localStorage.getItem("nickname") || "플레이어";
             const storyTexts = [
-            `일단 캠투라고 적어주세요.`,
-            "<img src='images/4th.png' alt='캠퍼스' width=90%>"
+            `<strong>선배</strong>: 밥 맛있게 먹었어? 그럼 우리 이제 소화도 할 겸 캠퍼스 투어하러 갈래?`,
+            `<br><br><strong>${nickname}</strong>: 좋아요! 어디부터 가 볼까요?`,
+            `<br><br><strong>선배</strong>: 그럼 내가 자주 가는 곳을 하나씩 소개해 줄게! 우선 나는 날씨 좋은 날 SK미래관 <strong>대강당</strong> 앞에 있는 나무 데크에서 쉬곤 해. 공강 때 동기들이랑 자주 거기서 수다 떠는 것 같아.`,
+            `<br><br><strong>${nickname}</strong>: 그렇군요! 그럼 선배는 공부할 땐 어디로 가시나요? 저도 학교에서 공부하는 멋진 대학생이 될래요!`,
+            `<br><br><strong>선배</strong>: 나는 보통 <strong>백주년기념삼성관</strong>에서 공부해! 좌석이 많고 쾌적해서 집중하기 좋아. 구법과 가까워서 자주 이용하지.`,
+            `<br><br><strong>${nickname}</strong>: 그렇군요! 어, 선배님! 그럼 저 공간은 뭐예요? 처음 보는 것 같은데?`,
+            `<br><br><strong>선배</strong>: … 저긴 <strong>대학원</strong> 도서관이야. 물론 꿈이 있다면 언제나 응원하겠지만, 교수님이 밥 먹자고 하시면 다시 한 번 생각해 보도록 하자!`,
+            `<br><br><strong>${nickname}</strong>: 네! ^^ 학교가 진짜 넓은 것 같아요. 지금 저희가 걷고 있는 길이 다람쥐길인 거죠? 대학원 도서관에서 본관 뒤로 가는 길이요! 어? 근데 여기 이 큰 건물은 뭐예요?`,
+            `<br><br><strong>선배</strong>: 아, 여기는 <strong>문과대학</strong> 건물이야! 보통 다람쥐길을 지나가면서 자주 마주치는 공간이지.`,
+            "<img src='images/4th.png' alt='캠퍼스' width=90%>",
+            "<img src='images/4th-2.png' alt='캠투 힌트' width=90%>"
         ];
 
             document.getElementById("story").innerHTML = storyTexts.join("<br>");
