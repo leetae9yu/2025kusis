@@ -129,6 +129,7 @@ button:hover {
 
 .text-overlay {
     position: absolute;
+    overflow-y: hidden;
     top: 50%;  /* 원하는 위치로 조정 가능 */
     left: 50%;
     transform: translate(-50%, -50%);
