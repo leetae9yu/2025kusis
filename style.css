@@ -23,6 +23,7 @@ body {
     background-size: cover;
     border: 3px solid #6e4c2a;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow-x: hidden;
 }
 
 .rule_container {
