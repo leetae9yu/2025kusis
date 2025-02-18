@@ -89,6 +89,7 @@ function checkAnswer() {
         'game_screen5.html': "w",
         'game_screen6.html': "love",
         'game_screen7.html': "25",
+        'game_screen8.html': "케시케시"
     };
     const nextScreens = {
         'game_screen2.html': 'game_screen3.html',
