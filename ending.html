@@ -32,7 +32,6 @@
 
         .nickname-text {
             position: absolute;
-            font-size: 2vw;
             font-weight: bold;
             color: black;
             white-space: nowrap;
@@ -54,13 +53,17 @@
             const nickname = localStorage.getItem("nickname") || "플레이어";
             nicknameElement.textContent = nickname;
 
-            // 이미지 로드 후 위치 조정
+            // 이미지 로드 후 위치 및 폰트 크기 조정
             imageElement.onload = function () {
                 const imageRect = imageElement.getBoundingClientRect();
-                
+
                 // 성명란의 위치 (이미지 크기에 따라 조정)
-                nicknameElement.style.top = `${imageRect.top + imageRect.height * 0.405}px`;
-                nicknameElement.style.left = `${imageRect.left + imageRect.width * 0.375}px`;
+                nicknameElement.style.top = `${imageRect.top + imageRect.height * 0.405}px`; // 이미지 높이의 52.5% 위치
+                nicknameElement.style.left = `${imageRect.left + imageRect.width * 0.375}px`; // 이미지 너비의 32% 위치
+
+                // 기존 이미지 텍스트 크기와 일치하도록 자동 조정
+                const baseFontSize = imageRect.height * 0.025; // 이미지 높이의 2.5% 크기
+                nicknameElement.style.fontSize = `${baseFontSize}px`;
             };
         });
     </script>
