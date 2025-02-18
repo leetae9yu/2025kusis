@@ -87,8 +87,8 @@ function checkAnswer() {
         'game_screen3.html': "정경대후문",
         'game_screen4.html': "무르무르드구스토",
         'game_screen5.html': "w",
-        'game_screen6.html': "캠투",
-        'game_screen7.html': "25"
+        'game_screen6.html': "love",
+        'game_screen7.html': "25",
     };
     const nextScreens = {
         'game_screen2.html': 'game_screen3.html',
