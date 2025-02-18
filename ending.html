@@ -38,34 +38,50 @@
             white-space: nowrap;
             overflow-y: hidden;
         }
+
+        .time-text {
+            position: absolute;
+            font-weight: bold;
+            color: black;
+            white-space: nowrap;
+        }
     </style>
 </head>
 <body>
     <div class="ending-container">
         <img id="endingImage" src="images/ending.png" alt="엔딩 이미지" class="ending-image">
         <div class="nickname-text" id="nickname"></div>
+        <div class="time-text" id="playTime"></div>
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const nicknameElement = document.getElementById("nickname");
             const imageElement = document.getElementById("endingImage");
+            const timeElement = document.getElementById("playTime");
 
             // 저장된 닉네임 불러오기 (없으면 '플레이어')
             const nickname = localStorage.getItem("nickname") || "플레이어";
             nicknameElement.textContent = nickname;
 
+            const formattedTime = localStorage.getItem("formattedTime") || "시간 없음";
+
             // 이미지 로드 후 위치 및 폰트 크기 조정
             imageElement.onload = function () {
                 const imageRect = imageElement.getBoundingClientRect();
+                timeElement.textContent = formattedTime;
 
                 // 성명란의 위치 (이미지 크기에 따라 조정)
-                nicknameElement.style.top = `${imageRect.top + imageRect.height * 0.4093}px`; // 이미지 높이의 52.5% 위치
-                nicknameElement.style.left = `${imageRect.left + imageRect.width * 0.375}px`; // 이미지 너비의 32% 위치
+                nicknameElement.style.top = `${imageRect.top + imageRect.height * 0.4093}px`;
+                nicknameElement.style.left = `${imageRect.left + imageRect.width * 0.375}px`;
+
+                timeElement.style.top = `${imageRect.top + imageRect.height * 0.435}px`;
+                timeElement.style.left = `${imageRect.left + imageRect.width * 0.375}px`;
 
                 // 기존 이미지 텍스트 크기와 일치하도록 자동 조정
                 const baseFontSize = imageRect.height * 0.022; // 이미지 높이의 2.5% 크기
                 nicknameElement.style.fontSize = `${baseFontSize}px`;
+                timeElement.style.fontSize = `${baseFontSize}px`;
             };
         });
     </script>
