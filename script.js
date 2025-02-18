@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("문제없음~");
 
-    // 게임 시작
+    // 게임 시작 버튼
     const startButton = document.querySelector(".start-button");
     if (startButton) {
         startButton.addEventListener("click", startGame);
@@ -31,30 +31,30 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ✅ game_screen2.html에서 게임 시작 시간 저장
+    // game_screen2에서 게임 시작 시간 저장
     if (window.location.pathname.includes("game_screen2.html")) {
-        if (!sessionStorage.getItem("gameStartTime")) {
+        if (!localStorage.getItem("gameStartTime")) {
             const startTime = new Date().getTime();
-            sessionStorage.setItem("gameStartTime", startTime);
+            localStorage.setItem("gameStartTime", startTime);
             console.log(`게임 시작 시간 저장: ${startTime}`);
         } else {
-            console.log(`기존 게임 시작 시간 유지: ${sessionStorage.getItem("gameStartTime")}`);
+            console.log(`기존 게임 시작 시간 유지: ${localStorage.getItem("gameStartTime")}`);
         }
     }
 
-    // ✅ ending.html에서 총 플레이 시간 계산 및 표시
+    // ending.html에서 총 플레이 시간 계산 및 표시
     if (window.location.pathname.includes("ending.html")) {
         displayCongratsMessage();
         displayGameTime();
     }
 });
 
-// ✅ 게임 시작
+// index -> rules
 function startGame() {
     window.location.href = 'rules.html';
 }
 
-// ✅ 닉네임 저장
+// 닉네임 저장
 function saveNickname() {
     const nickname = document.getElementById('nickname').value.trim();
     if (!nickname) {
@@ -66,7 +66,7 @@ function saveNickname() {
     window.location.href = 'game_screen2.html';
 }
 
-// ✅ 규칙 화면에서 "자전" 입력 시 게임 시작
+// 규칙 화면에서 "자전" 입력 시 게임 시작
 function checkRulesAnswer() {
     const answer = document.getElementById('answer').value.trim();
     if (answer === "자전") {
@@ -77,7 +77,7 @@ function checkRulesAnswer() {
     }
 }
 
-// ✅ 정답 체크 + 총 플레이 시간 저장
+// 정답 체크 + 총 플레이 시간 저장
 function checkAnswer() {
     const answer = document.getElementById('quiz-answer').value.trim();
     
@@ -103,7 +103,7 @@ function checkAnswer() {
     if (answer.toLowerCase() === correctAnswers[currentPage].toLowerCase()) {
         alert("정답입니다!");
 
-        // ✅ 마지막 스테이지에서 총 플레이 시간 저장
+        // 마지막 스테이지에서 총 플레이 시간 저장
         if (currentPage === 'game_screen5.html') {
             saveTotalGameTime();
         }
@@ -114,33 +114,34 @@ function checkAnswer() {
     }
 }
 
-// ✅ 총 플레이 시간 저장
+// 총 플레이 시간 저장
 function saveTotalGameTime() {
-    const startTime = sessionStorage.getItem("gameStartTime");
+    const startTime = localStorage.getItem("gameStartTime");
     if (startTime) {
         const endTime = new Date().getTime();
         const timeDiff = endTime - parseInt(startTime);
+        const today = new Date().toLocaleDateString('ko-KR', { month: '2-digit', day: '2-digit' }).replace(/[^0-9]/g, '');
 
-        const seconds = Math.floor(timeDiff / 1000) % 60;
-        const minutes = Math.floor(timeDiff / (1000 * 60)) % 60;
-        const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+        const seconds = String(Math.floor(timeDiff / 1000) % 60).padStart(2, '0');
+        const minutes = String(Math.floor(timeDiff / (1000 * 60)) % 60).padStart(2, '0');
+        const hours = String(Math.floor(timeDiff / (1000 * 60 * 60))).padStart(2, '0');
 
-        const formattedTime = `${hours}시간 ${minutes}분 ${seconds}초`;
+        const formattedTime = `${today}${hours}${minutes}${seconds}`;
 
         console.log(`총 플레이 시간 저장: ${formattedTime}`);
-        sessionStorage.setItem("formattedTime", formattedTime);
-    }
+        localStorage.setItem("formattedTime", formattedTime);
+    }   
 }
 
-// ✅ 엔딩 메시지 표시
+// 엔딩 메시지 표시
 function displayCongratsMessage() {
     const nickname = localStorage.getItem("nickname") || "플레이어";
     document.getElementById("congrats-message").textContent = `${nickname}님 축하합니다!`;
 }
 
-// ✅ 엔딩 페이지에서 총 플레이 시간 출력
+// 엔딩 페이지에서 총 플레이 시간 출력
 function displayGameTime() {
-    const formattedTime = sessionStorage.getItem("formattedTime");
+    const formattedTime = localStorage.getItem("formattedTime");
 
     if (!formattedTime) {
         console.log("총 플레이 시간 기록 없음");
