@@ -102,10 +102,10 @@ function checkAnswer() {
     };
 
     const currentPage = window.location.pathname.split("/").pop();
+    sessionStorage.setItem(`token_${nextScreens[currentPage]}`, "authorized");
+    
     if (answer.toLowerCase() === correctAnswers[currentPage].toLowerCase()) {
         alert("정답입니다!");
-
-        sessionStorage.setItem(`token_${nextScreens[currentPage]}`, "authorized");
 
         // 마지막 스테이지에서 총 플레이 시간 저장
         if (currentPage === 'game_screen8.html') {
