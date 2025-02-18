@@ -96,7 +96,8 @@ function checkAnswer() {
         'game_screen4.html': 'game_screen5.html',
         'game_screen5.html': 'game_screen6.html',
         'game_screen6.html': 'game_screen7.html',
-        'game_screen7.html': 'ending.html'
+        'game_screen7.html': 'game_screen8.html',
+        'game_screen8.html': 'ending.html'
     };
 
     const currentPage = window.location.pathname.split("/").pop();

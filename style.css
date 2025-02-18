@@ -119,6 +119,26 @@ button:hover {
     overflow-x: hidden;
 }
 
+.ending-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url('images/background.png') no-repeat center center;
+    background-size: cover;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;  /* 원하는 위치로 조정 가능 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+
 .inverted {
     background-color: black; /* 배경색 반전 */
     color: white; /* 글자색 반전 */

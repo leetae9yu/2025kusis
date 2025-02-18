@@ -4,11 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게임 엔딩</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+            overflow: hidden;
+        }
+
+        .ending-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ending-image {
+            max-width: 90vw; /* 화면 너비에 맞춤 */
+            max-height: 90vh; /* 화면 높이에 맞춤 */
+            object-fit: contain; /* 비율 유지하며 크기 조정 */
+        }
+
+        .nickname-text {
+            position: absolute;
+            font-size: 1vw;
+            font-weight: bold;
+            color: black;
+            white-space: nowrap;
+        }
+    </style>
 </head>
-<body class="ending-page">
-    <div id="congrats-message"></div>
-    <div id="clear-time"></div>
+<body>
+    <div class="ending-container">
+        <img id="endingImage" src="images/ending.png" alt="엔딩 이미지" class="ending-image">
+        <div class="nickname-text" id="nickname"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nicknameElement = document.getElementById("nickname");
+            const imageElement = document.getElementById("endingImage");
+
+            // 저장된 닉네임 불러오기 (없으면 '플레이어')
+            const nickname = localStorage.getItem("nickname") || "플레이어";
+            nicknameElement.textContent = nickname;
+
+            // 이미지 로드 후 위치 조정
+            imageElement.onload = function () {
+                const imageRect = imageElement.getBoundingClientRect();
+                
+                // 성명란의 위치 (이미지 크기에 따라 조정)
+                nicknameElement.style.top = `${imageRect.top + imageRect.height * 0.405}px`;
+                nicknameElement.style.left = `${imageRect.left + imageRect.width * 0.375}px`;
+            };
+        });
+    </script>
 </body>
 </html>
