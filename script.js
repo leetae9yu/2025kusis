@@ -102,8 +102,7 @@ function checkAnswer() {
     };
 
     const currentPage = window.location.pathname.split("/").pop();
-    sessionStorage.setItem(`token_${nextScreens[currentPage]}`, "authorized");
-    
+
     if (answer.toLowerCase() === correctAnswers[currentPage].toLowerCase()) {
         alert("정답입니다!");
 

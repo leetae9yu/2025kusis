@@ -20,11 +20,6 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            if (!sessionStorage.getItem(`token_${currentPage}`)) {
-                alert("이전 퀴즈를 풀지 않고 접근할 수 없습니다.");
-                window.location.href = "game_screen1.html"; // 첫 화면으로 강제 이동
-            }
-            
             const nickname = localStorage.getItem("nickname") || "플레이어";
             const storyTexts = [
             `드디어 밥약 당일.`,

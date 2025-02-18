@@ -20,11 +20,6 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            if (!sessionStorage.getItem(`token_${currentPage}`)) {
-                alert("이전 퀴즈를 풀지 않고 접근할 수 없습니다.");
-                window.location.href = "game_screen1.html"; // 첫 화면으로 강제 이동
-            }
-            
             const nickname = localStorage.getItem("nickname") || "플레이어";
             const storyTexts = [
             "'그래, 밥약! 고려대에서는 친해지고 싶으면 밥약을 걸라고 했어.'",
