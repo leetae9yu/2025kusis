@@ -105,8 +105,10 @@ function checkAnswer() {
     if (answer.toLowerCase() === correctAnswers[currentPage].toLowerCase()) {
         alert("정답입니다!");
 
+        sessionStorage.setItem(`token_${nextScreens[currentPage]}`, "authorized");
+
         // 마지막 스테이지에서 총 플레이 시간 저장
-        if (currentPage === 'game_screen5.html') {
+        if (currentPage === 'game_screen8.html') {
             saveTotalGameTime();
         }
 
@@ -128,7 +130,7 @@ function saveTotalGameTime() {
         const minutes = String(Math.floor(timeDiff / (1000 * 60)) % 60).padStart(2, '0');
         const hours = String(Math.floor(timeDiff / (1000 * 60 * 60))).padStart(2, '0');
 
-        const formattedTime = `${today}${hours}${minutes}${seconds}`;
+        const formattedTime = `${today}${hours}${minutes}${seconds}`;x``
 
         console.log(`총 플레이 시간 저장: ${formattedTime}`);
         localStorage.setItem("formattedTime", formattedTime);
