@@ -21,6 +21,11 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            if (!sessionStorage.getItem(`token_${currentPage}`)) {
+                alert("이전 퀴즈를 풀지 않고 접근할 수 없습니다.");
+                window.location.href = "game_screen1.html"; // 첫 화면으로 강제 이동
+            }
+            
             const storyTexts = [
             `'정후에서 만나는 게 국룰이구나...'`,
             `<br><br>약속 장소는 정경대후문. 이제 문제는 메뉴 선택이었다.`,
