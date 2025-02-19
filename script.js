@@ -152,7 +152,7 @@ function displayCongratsMessage() {
 
 // 엔딩 페이지에서 총 플레이 시간 출력
 function displayGameTime() {
-    const formattedTime = sessiontorage.getItem("formattedTime");
+    const formattedTime = sessionStorage.getItem("formattedTime");
 
     if (!formattedTime) {
         console.log("총 플레이 시간 기록 없음");
