@@ -115,7 +115,7 @@ function checkAnswer() {
         alert("정답입니다!");
 
         // 총 플레이 시간 저장
-        if (currentPage === 'game_screen12.html') {
+        if (currentPage === 'game_screen13.html') {
             saveTotalGameTime();
         }
 
