@@ -33,12 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 게임 시작 시간
     if (window.location.pathname.includes("game_screen2.html")) {
-        if (!localStorage.getItem("gameStartTime")) {
+        if (!sessionStorage.getItem("gameStartTime")) {
             const startTime = new Date().getTime();
-            localStorage.setItem("gameStartTime", startTime);
+            sessionStorage.setItem("gameStartTime", startTime);
             console.log(`게임 시작 시간 저장: ${startTime}`);
         } else {
-            console.log(`기존 게임 시작 시간 유지: ${localStorage.getItem("gameStartTime")}`);
+            console.log(`기존 게임 시작 시간 유지: ${sessionStorage.getItem("gameStartTime")}`);
         }
     }
 
@@ -127,7 +127,7 @@ function checkAnswer() {
 
 // 총 플레이 시간 저장
 function saveTotalGameTime() {
-    const startTime = localStorage.getItem("gameStartTime");
+    const startTime = sessionStorage.getItem("gameStartTime");
     if (startTime) {
         const endTime = new Date().getTime();
         const timeDiff = endTime - parseInt(startTime);
@@ -140,7 +140,7 @@ function saveTotalGameTime() {
         const formattedTime = `${today}${hours}${minutes}${seconds}`;x``
 
         console.log(`총 플레이 시간 저장: ${formattedTime}`);
-        localStorage.setItem("formattedTime", formattedTime);
+        sessionStorage.setItem("formattedTime", formattedTime);
     }   
 }
 
@@ -152,7 +152,7 @@ function displayCongratsMessage() {
 
 // 엔딩 페이지에서 총 플레이 시간 출력
 function displayGameTime() {
-    const formattedTime = localStorage.getItem("formattedTime");
+    const formattedTime = sessiontorage.getItem("formattedTime");
 
     if (!formattedTime) {
         console.log("총 플레이 시간 기록 없음");
