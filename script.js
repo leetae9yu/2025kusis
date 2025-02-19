@@ -93,7 +93,7 @@ function checkAnswer() {
         'M3cXoHbBqQ.html': "siso",
         'GxwngdwkgC.html': "고대자전학회환영해",
         'exOYXAyO2D.html': "2223",
-        'cOG8YNdene.html': "안암역이번출구"
+        'OJ3muElxrE.html': "안암역이번출구"
     };
     const nextScreens = {
         '5U4KlzAuEa.html': 'L6oANupv9Q.html',
