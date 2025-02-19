@@ -29,12 +29,14 @@
             `<br><br>'어, 무슨 상황이지?'`,
             `<br><br>다시 정신을 차리고 눈을 떠보니, 고그와트의 풍경은 모두 사라지고 익숙한 풍경이 눈에 들어온다.`,
             `<br><br>뭐지..? 나 분명 고그와트 신입생으로…. 모두 꿈이었던 건가??`
-
-
         ];
 
             document.getElementById("story").innerHTML = storyTexts.join("<br>");
         });
+
+        function nextScreen() {
+        window.location.href = 'game_screen13.html'; // 다음 화면으로 이동
+    }
     </script>
 </body>
 </html>
