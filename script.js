@@ -137,7 +137,7 @@ function saveTotalGameTime() {
         const minutes = String(Math.floor(timeDiff / (1000 * 60)) % 60).padStart(2, '0');
         const hours = String(Math.floor(timeDiff / (1000 * 60 * 60))).padStart(2, '0');
 
-        const formattedTime = `${today}${hours}${minutes}${seconds}`;x``
+        const formattedTime = `${today}${hours}${minutes}${seconds}`;
 
         console.log(`총 플레이 시간 저장: ${formattedTime}`);
         sessionStorage.setItem("formattedTime", formattedTime);
