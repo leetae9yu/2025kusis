@@ -23,14 +23,15 @@
             const nickname = localStorage.getItem("nickname") || "플레이어";
             const storyTexts = [
             "'그래, 밥약! 고려대에서는 친해지고 싶으면 밥약을 걸라고 했어.'",
-            "<br><br>선배에게 밥약을 걸었더니, 답장이 왔다.",
-            `<br><br><strong>선배:</strong> 정말 반가워 ${nickname}야, 먼저 연락해줘서 고마워.`,
-            `<br><br><strong>${nickname}:</strong> 경험이 많으신 선배에게 학교 생활 꿀팁도 듣고 싶어요!`,
-            `<br><br><strong>선배:</strong> 대화도 나누고, 새내기 생활에 대한 팁도 줄게.`,
-            `<br><br><strong>${nickname}:</strong> 후배로서 궁금한 게 많아요~ ㅎㅎ`,
-            `<br><br><strong>선배:</strong> 문의사항은 환영이야. 천천히 얘기 나누자.`,
-            `<br><br><strong>${nickname}:</strong> 그런데, 선배 저희 어디서 만나요?`,
-            `<br><br><strong>선배:</strong> 당연히 그 곳이지! 잘 모르겠다면, 우리의 대화를 앞에서부터 찬찬히 다시 살펴봐.`
+            "<br><br>선배에게 디엠으로 밥약을 걸었더니, 답장이 왔다.",
+            `<br><br><strong>선배:</strong> "정말 반가워 ${nickname}야, 먼저 연락해줘서 고마워."`,
+            `<br><br><strong>${nickname}:</strong> "경험이 많으신 선배에게 학교 생활 꿀팁도 듣고 싶어요!"`,
+            `<br><br><strong>선배:</strong> "대화도 나누고, 새내기 생활에 대한 팁도 줄게."`,
+            `<br><br><strong>${nickname}:</strong> "후배로서 궁금한 게 많아요~ ㅎㅎ"`,
+            `<br><br><strong>선배:</strong> "문의사항은 환영이야. 천천히 얘기 나누자."`,
+            `<br><br>'밥약을 하게 되다니 정말 기쁘다! 그런데, 선배랑 어디에서 만나지?'`,
+            `<br><br><strong>${nickname}:</strong> "그런데, 선배 저희 어디서 만나요?"`,
+            `<br><br><strong>선배:</strong> "당연히 그 곳이지! 잘 모르겠다면, 우리의 대화를 앞에서부터 찬찬히 다시 살펴봐."`
         ];
 
             document.getElementById("story").innerHTML = storyTexts.join("<br>");
