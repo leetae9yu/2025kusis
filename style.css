@@ -115,7 +115,7 @@ button:hover {
     font-weight: bold;
     background: url('images/background.png') no-repeat center center;
     background-size: cover;
-    font-family: 'EB Garamond', serif;
+    font-family: 'Noto Sans CJK KR Medium', serif;
     overflow-x: hidden;
 }
 
@@ -139,11 +139,3 @@ button:hover {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-
-.inverted {
-    background-color: black; /* 배경색 반전 */
-    color: white; /* 글자색 반전 */
-    padding: 2px 5px;
-    border-radius: 5px; /* 둥근 테두리 (선택 사항) */
-    display: inline-block; /* 문장 내에서 자연스럽게 표시 */
-}
