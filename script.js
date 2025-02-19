@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // 게임 시작 시간
-    if (window.location.pathname.includes("game_screen2.html")) {
+    if (window.location.pathname.includes("5U4KlzAuEa.html")) {
         if (!sessionStorage.getItem("gameStartTime")) {
             const startTime = new Date().getTime();
             sessionStorage.setItem("gameStartTime", startTime);
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // 총 플레이 시간 표시
-    if (window.location.pathname.includes("ending.html")) {
+    if (window.location.pathname.includes("ntEgt7T4le.html")) {
         displayCongratsMessage();
         displayGameTime();
     }
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // index -> rules
 function startGame() {
-    window.location.href = 'rules.html';
+    window.location.href = '78HFUk3iVa.html';
 }
 
 // 닉네임 저장
@@ -63,7 +63,7 @@ function saveNickname() {
     }
     localStorage.setItem("nickname", nickname);
     alert(`'${nickname}' 닉네임이 확인되었습니다.`);
-    window.location.href = 'game_screen2.html';
+    window.location.href = '5U4KlzAuEa.html';
 }
 
 // rules -> game_screen1
@@ -71,7 +71,7 @@ function checkRulesAnswer() {
     const answer = document.getElementById('answer').value.trim();
     if (answer === "자전") {
         alert("환영합니다.");
-        window.location.href = 'after_rules.html';
+        window.location.href = '7zIX7NaCpO.html';
     } else {
         alert("정답이 아닙니다. 다시 시도해주세요.");
     }
@@ -83,30 +83,30 @@ function checkAnswer() {
     
     // 퀴즈 정답 + 화면 전환
     const correctAnswers = {
-        'game_screen2.html': "밥약",
-        'game_screen3.html': "정경대후문",
-        'game_screen4.html': "무르무르드구스토",
-        'game_screen5.html': "w",
-        'game_screen6.html': "love",
-        'game_screen7.html': "25",
-        'game_screen8.html': "케시케시",
-        'game_screen9.html': "siso",
-        'game_screen10.html': "고대자전학회환영해",
-        'game_screen11.html': "2223",
-        'game_screen13.html': "안암역이번출구"
+        '5U4KlzAuEa.html': "밥약",
+        'L6oANupv9Q.html': "정경대후문",
+        'RvKP7gOqyj.html': "무르무르드구스토",
+        'Lgshoh7O5w.html': "w",
+        'UIqYGE6kx7.html': "love",
+        'M0Gnx4LDty.html': "25",
+        '9LsC4CP3wN.html': "케시케시",
+        'M3cXoHbBqQ.html': "siso",
+        'GxwngdwkgC.html': "고대자전학회환영해",
+        'exOYXAyO2D.html': "2223",
+        'cOG8YNdene.html': "안암역이번출구"
     };
     const nextScreens = {
-        'game_screen2.html': 'game_screen3.html',
-        'game_screen3.html': 'game_screen4.html',
-        'game_screen4.html': 'game_screen5.html',
-        'game_screen5.html': 'game_screen6.html',
-        'game_screen6.html': 'game_screen7.html',
-        'game_screen7.html': 'game_screen8.html',
-        'game_screen8.html': 'game_screen9.html',
-        'game_screen9.html': 'game_screen10.html',
-        'game_screen10.html': 'game_screen11.html',
-        'game_screen11.html': 'game_screen12.html',
-        'game_screen13.html': 'ending.html' 
+        '5U4KlzAuEa.html': 'L6oANupv9Q.html',
+        'L6oANupv9Q.html': 'RvKP7gOqyj.html',
+        'RvKP7gOqyj.html': 'Lgshoh7O5w.html',
+        'Lgshoh7O5w.html': 'UIqYGE6kx7.html',
+        'UIqYGE6kx7.html': 'M0Gnx4LDty.html',
+        'M0Gnx4LDty.html': '9LsC4CP3wN.html',
+        '9LsC4CP3wN.html': 'M3cXoHbBqQ.html',
+        'M3cXoHbBqQ.html': 'GxwngdwkgC.html',
+        'GxwngdwkgC.html': 'exOYXAyO2D.html',
+        'exOYXAyO2D.html': 'cOG8YNdene.html',
+        'OJ3muElxrE.html': 'ntEgt7T4le.html' 
     };
 
     const currentPage = window.location.pathname.split("/").pop();
@@ -115,7 +115,7 @@ function checkAnswer() {
         alert("정답입니다!");
 
         // 총 플레이 시간 저장
-        if (currentPage === 'game_screen13.html') {
+        if (currentPage === 'OJ3muElxrE.html') {
             saveTotalGameTime();
         }
 
