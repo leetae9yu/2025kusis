@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>게임 화면 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Chapter 10</h1>
+        <div class="story-box" id="story"></div>
+        <p>Q. 반 별로 해당하는 정보가 몇 개인지 세어볼까? (A,B,C,D 순서)</p>
+        <div class="input-box">
+            <input type="text" id="quiz-answer" placeholder="정답 입력">
+            <button onclick="checkAnswer()">제출</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nickname = localStorage.getItem("nickname") || "플레이어";
+            const storyTexts = [
+            `<strong>${nickname}</strong>: "학생회도, 법학회도 모두 알아봤는데 가장 중요한 반 생활에 대해서 안 물어봤네요!!! 자전은 4개의 반으로 나뉜다던데, 진짜인가요?"`,
+            `<br><br><strong>선배</strong>: "응~ 그럼 내가 반에 대해 이야기 해줘야겠구나!! 내가 그럼 각 반에 대해 이야기 해 줄 테니, 어떤 반에 대한 특징인지 알아볼래?"`,
+            `<br><br><strong>선배</strong>: "그래~ 내가 다 알려줄게!! 잘 기억해두고 지원해봐!!"`,
+            "<img src='images/Chapter10/1st.png' alt='퀴즈' width=90%>"
+
+
+        ];
+
+            document.getElementById("story").innerHTML = storyTexts.join("<br>");
+        });
+    </script>
+</body>
+</html>

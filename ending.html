@@ -72,14 +72,14 @@
                 timeElement.textContent = formattedTime;
 
                 // 성명란의 위치 (이미지 크기에 따라 조정)
-                nicknameElement.style.top = `${imageRect.top + imageRect.height * 0.4093}px`;
+                nicknameElement.style.top = `${imageRect.top + imageRect.height * 0.415}px`;
                 nicknameElement.style.left = `${imageRect.left + imageRect.width * 0.375}px`;
 
-                timeElement.style.top = `${imageRect.top + imageRect.height * 0.435}px`;
+                timeElement.style.top = `${imageRect.top + imageRect.height * 0.44}px`;
                 timeElement.style.left = `${imageRect.left + imageRect.width * 0.375}px`;
 
                 // 기존 이미지 텍스트 크기와 일치하도록 자동 조정
-                const baseFontSize = imageRect.height * 0.022; // 이미지 높이의 2.5% 크기
+                const baseFontSize = imageRect.height * 0.0215;
                 nicknameElement.style.fontSize = `${baseFontSize}px`;
                 timeElement.style.fontSize = `${baseFontSize}px`;
             };

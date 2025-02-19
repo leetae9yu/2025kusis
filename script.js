@@ -89,7 +89,10 @@ function checkAnswer() {
         'game_screen5.html': "w",
         'game_screen6.html': "love",
         'game_screen7.html': "25",
-        'game_screen8.html': "케시케시"
+        'game_screen8.html': "케시케시",
+        'game_screen9.html': "siso",
+        'game_screen10.html': "고대자전학회환영해",
+        'game_screen11.html': "2223"
     };
     const nextScreens = {
         'game_screen2.html': 'game_screen3.html',
@@ -98,7 +101,10 @@ function checkAnswer() {
         'game_screen5.html': 'game_screen6.html',
         'game_screen6.html': 'game_screen7.html',
         'game_screen7.html': 'game_screen8.html',
-        'game_screen8.html': 'ending.html'
+        'game_screen8.html': 'game_screen9.html',
+        'game_screen9.html': 'game_screen10.html',
+        'game_screen10.html': 'game_screen11.html',
+        'game_screen11.html': 'ending.html' 
     };
 
     const currentPage = window.location.pathname.split("/").pop();
