@@ -65,11 +65,11 @@
             nicknameElement.textContent = nickname;
 
             const formattedTime = sessionStorage.getItem("formattedTime") || "시간 없음";
+            timeElement.textContent = formattedTime;
 
             // 이미지 로드 후 위치 및 폰트 크기 조정
             imageElement.onload = function () {
                 const imageRect = imageElement.getBoundingClientRect();
-                timeElement.textContent = formattedTime;
 
                 // 성명란의 위치 (이미지 크기에 따라 조정)
                 nicknameElement.style.top = `${imageRect.top + imageRect.height * 0.411}px`;
