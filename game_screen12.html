@@ -12,7 +12,7 @@
         <h1>Chapter 11</h1>
         <div class="story-box" id="story"></div>
         <div class="input-box">
-            <button onclick="checkAnswer()">다음 장으로</button>
+            <button onclick="directNext()">다음 장으로</button>
         </div>
     </div>
 
@@ -34,7 +34,7 @@
             document.getElementById("story").innerHTML = storyTexts.join("<br>");
         });
 
-        function nextScreen() {
+        function directNext() {
         window.location.href = 'game_screen13.html'; // 다음 화면으로 이동
     }
     </script>
