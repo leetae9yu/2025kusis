@@ -113,7 +113,7 @@ function checkAnswer() {
         alert("정답입니다!");
 
         // 마지막 스테이지에서 총 플레이 시간 저장
-        if (currentPage === 'game_screen8.html') {
+        if (currentPage === 'game_screen11.html') {
             saveTotalGameTime();
         }
 
