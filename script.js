@@ -92,7 +92,8 @@ function checkAnswer() {
         'game_screen8.html': "케시케시",
         'game_screen9.html': "siso",
         'game_screen10.html': "고대자전학회환영해",
-        'game_screen11.html': "2223"
+        'game_screen11.html': "2223",
+        'game_screen13.html': "안암역이번출구"
     };
     const nextScreens = {
         'game_screen2.html': 'game_screen3.html',
@@ -104,7 +105,8 @@ function checkAnswer() {
         'game_screen8.html': 'game_screen9.html',
         'game_screen9.html': 'game_screen10.html',
         'game_screen10.html': 'game_screen11.html',
-        'game_screen11.html': 'ending.html' 
+        'game_screen11.html': 'game_screen12.html',
+        'game_screen13.html': 'ending.html' 
     };
 
     const currentPage = window.location.pathname.split("/").pop();
@@ -113,7 +115,7 @@ function checkAnswer() {
         alert("정답입니다!");
 
         // 마지막 스테이지에서 총 플레이 시간 저장
-        if (currentPage === 'game_screen11.html') {
+        if (currentPage === 'ending.html') {
             saveTotalGameTime();
         }
 

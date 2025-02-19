@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>게임 화면 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Chapter 11</h1>
+        <div class="story-box" id="story"></div>
+        <div class="input-box">
+            <button onclick="checkAnswer()">다음 장으로</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nickname = localStorage.getItem("nickname") || "플레이어";
+            const storyTexts = [
+            `<strong>선배</strong>: "ㅎㅎ 오늘 밥약 정말 재미있었어! 다음에 또 밥약 걸어줘~ 난 이제 수업 들으러 가 볼게!!!"`,
+            `<br><br><strong>${nickname}</strong>: "지금까지 선배랑 밥약도 하고, 시간표도 짜고, 캠퍼스 투어도 하고, 응원가와 교호도 배우고, 자전의 문화도 배울 수 있었어요!! 너무 감사합니다 조심히 가세요 ~~`,
+            `<br><br>선배와 인사한 뒤, 나도 수업에 가려고 일어섰다.`,
+            `<br><br>그러나, 일어선 순간 핑 돌면서 시야가 흐려진다.`,
+            `<br><br>"$@(&!($@&)$.....”`,
+            `<br><br>밖에서 소란스러운 소리가 들린다.`,
+            `<br><br>'어, 무슨 상황이지?'`,
+            `<br><br>다시 정신을 차리고 눈을 떠보니, 고그와트의 풍경은 모두 사라지고 익숙한 풍경이 눈에 들어온다.`,
+            `<br><br>뭐지..? 나 분명 고그와트 신입생으로…. 모두 꿈이었던 건가??`
+
+
+        ];
+
+            document.getElementById("story").innerHTML = storyTexts.join("<br>");
+        });
+    </script>
+</body>
+</html>
