@@ -71,7 +71,7 @@ function checkRulesAnswer() {
     const answer = document.getElementById('answer').value.trim();
     if (answer === "자전") {
         alert("환영합니다.");
-        window.location.href = 'game_screen1.html';
+        window.location.href = 'after_rules.html';
     } else {
         alert("정답이 아닙니다. 다시 시도해주세요.");
     }
