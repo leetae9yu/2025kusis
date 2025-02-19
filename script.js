@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("문제없음~");
+    console.log("드디어!!!!!!");
 
     // 게임 시작 버튼
     const startButton = document.querySelector(".start-button");
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // game_screen2에서 게임 시작 시간 저장
+    // 게임 시작 시간
     if (window.location.pathname.includes("game_screen2.html")) {
         if (!localStorage.getItem("gameStartTime")) {
             const startTime = new Date().getTime();
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // ending.html에서 총 플레이 시간 계산 및 표시
+    // 총 플레이 시간 표시
     if (window.location.pathname.includes("ending.html")) {
         displayCongratsMessage();
         displayGameTime();
@@ -66,7 +66,7 @@ function saveNickname() {
     window.location.href = 'game_screen2.html';
 }
 
-// 규칙 화면에서 "자전" 입력 시 게임 시작
+// rules -> game_screen1
 function checkRulesAnswer() {
     const answer = document.getElementById('answer').value.trim();
     if (answer === "자전") {
@@ -114,7 +114,7 @@ function checkAnswer() {
     if (answer.toLowerCase() === correctAnswers[currentPage].toLowerCase()) {
         alert("정답입니다!");
 
-        // 마지막 스테이지에서 총 플레이 시간 저장
+        // 총 플레이 시간 저장
         if (currentPage === 'ending.html') {
             saveTotalGameTime();
         }

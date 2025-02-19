@@ -1,4 +1,3 @@
-/* 기본 스타일 */
 body {
     display: flex;
     justify-content: center;
@@ -10,7 +9,6 @@ body {
     margin: 0;
 }
 
-/* 컨테이너 */
 .container {
     text-align: center;
     padding: 20px;
@@ -40,14 +38,12 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* 제목 */
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
     word-wrap: break-word;
 }
 
-/* 제출 버튼 */
 button {
     padding: 10px 20px;
     font-size: 16px;
@@ -62,7 +58,6 @@ button:hover {
     background-color: #800000;
 }
 
-/* 정답 박스 */
 .input-box {
     display: flex;
     flex-direction: column;
@@ -79,7 +74,6 @@ button:hover {
     margin-bottom: 10px;
 }
 
-/* 스토리 박스 */
 .story-box {
     font-size: 16px;
     margin-bottom: 20px;
@@ -93,7 +87,6 @@ button:hover {
     text-align: left;
 }
 
-/* 이미지 */
 .story-box img {
     display: block;
     margin: 10px auto;
@@ -101,7 +94,6 @@ button:hover {
     width: 85%;
 }
 
-/* 엔딩 화면 */
 .ending-page {
     display: flex;
     justify-content: center;
